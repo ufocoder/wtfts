@@ -1,6 +1,9 @@
 # wtfts
 Tricky and non obvious TypeScript Examples
 
+## Table of Contents
+
+* [Enum option](#enum-option)
 
 ### Enum option
 
