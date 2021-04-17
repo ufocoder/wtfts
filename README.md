@@ -70,3 +70,27 @@ Type '{ weight: number; }' is missing the following properties from type 'Box': 
 Interfaces not are overridden by new declations
 
 [Playground](https://www.typescriptlang.org/play?ts=4.2.3#code/JYOwLgpgTgZghgYwgAgEIHsAeyDeBYAKGWOQGdgAvCALmRAFcBbAI2gG5CTkF0AbdKLVJgooAOYcCAX0KEA9HOQA6JckZwQAT2S9QEUsnQxu6ACYoAFtAiyCoSLEQoM2fERIB3CMDEWwtBhZ2QhkCQh4QYWRmLFoXZABeXE5Pb19-ZABWENsgA)
+
+
+## Invariant
+
+The following code will be compiled without errors:
+
+```
+interface Animal { name: string }
+interface Cat extends Animal { meow: () => string }
+interface Dog extends Animal { wow: () => string }
+
+const addAnimal = (animals: Animal[]) => {
+    const cat: Cat = { name: 'Cat #1', meow: () => 'meow' };
+    animals.push(cat);
+}
+
+const dogs: Dog[] = [];
+
+addAnimal(dogs);
+
+dogs[0].wow()
+```
+
+[Playground](https://www.typescriptlang.org/play?ts=4.2.3#code/JYOwLgpgTgZghgYwgAgIImAWzgG2Qb2RDkwgC5kBnMKUAc2QF8BYAKFElkRQGE4xkEAB6QQAE0poM2PIVIB7AO4UAFAEpkAXgB8VGvSZsO0eEmQAReQ2GiJUrLgLJFS1Rp17aIBi1ZsE8iDUyHBiYugOeJrIKnDSuJQUETIA2gC67rr4bMi5yAFBAgj8FHwC0YTEpBQA5GXIAMQAjDUANMgKyjGZyDWdNUwA3Dl5cZGUAHQADgCulAAWKsVgasOsvv6BwWJWiRZW6VrI6WtsoeHxOCo7dJSrbGw3lCkADGkTLorqbEA)
