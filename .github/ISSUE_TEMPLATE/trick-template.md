@@ -15,4 +15,4 @@ trick code
 
 **Explanation:** [EXPLANATION]
 
-[TYPESCRIPT_PLAYGROUND_URL]
+[Playground](TYPESCRIPT_PLAYGROUND_URL)
