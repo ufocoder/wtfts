@@ -1,7 +1,7 @@
 ---
 name: Trick template
 about: Template for new typescript trick example
-title: Add [trick] trick
+title: Add "[TRICK_NAME]" trick
 labels: documentation
 assignees: ''
 
