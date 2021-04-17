@@ -5,6 +5,7 @@ Tricky and non obvious TypeScript Examples
 
 * [Enum option](#enum-option)
 * [Interface redeclaration](#interface-redeclaration)
+* [Invariant](#invariant)
 
 ## Enum option
 
