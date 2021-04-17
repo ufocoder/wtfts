@@ -1,6 +1,8 @@
 # wtfts
 Tricky and non obvious TypeScript Examples
 
+Welcome to add new trick examples or to improve old one
+
 # Table of Contents
 
 * [Enum option](#enum-option)
