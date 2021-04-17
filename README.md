@@ -35,7 +35,7 @@ var CustomEnum;
 ;
 ```
 
-Value for `optionB` use `optionA` from enum score
+**Explanation**: Value for `optionB` use `optionA` from enum score
 
 
 [Playground](https://www.typescriptlang.org/play?ts=4.2.3#code/MYewdgzgLgBCAOUCW4CCMC8MDkA3AhgE5L4BGANgKYBq+5ArpatgNwCwAUJ5WPQLYwAwvWgg+AUV4CA3pxjy4iFGHRZsPfrQZNsAGjkKEycACFMi4ys4BfFkA)
@@ -68,7 +68,7 @@ has compile error:
 Type '{ weight: number; }' is missing the following properties from type 'Box': size, color
 ```
 
-Interfaces not are overridden by new declations
+**Explanation**: Interfaces not are overridden by new declations. 
 
 [Playground](https://www.typescriptlang.org/play?ts=4.2.3#code/JYOwLgpgTgZghgYwgAgEIHsAeyDeBYAKGWOQGdgAvCALmRAFcBbAI2gG5CTkF0AbdKLVJgooAOYcCAX0KEA9HOQA6JckZwQAT2S9QEUsnQxu6ACYoAFtAiyCoSLEQoM2fERIB3CMDEWwtBhZ2QhkCQh4QYWRmLFoXZABeXE5Pb19-ZABWENsgA)
 
