@@ -100,7 +100,7 @@ dogs[0].wow()
 [Playground](https://www.typescriptlang.org/play?ts=4.2.3#code/JYOwLgpgTgZghgYwgAgIImAWzgG2Qb2RDkwgC5kBnMKUAc2QF8BYAKFElkRQGE4xkEAB6QQAE0poM2PIVIB7AO4UAFAEpkAXgB8VGvSZsO0eEmQAReQ2GiJUrLgLJFS1Rp17aIBi1ZsE8iDUyHBiYugOeJrIKnDSuJQUETIA2gC67rr4bMi5yAFBAgj8FHwC0YTEpBQA5GXIAMQAjDUANMgKyjGZyDWdNUwA3Dl5cZGUAHQADgCulAAWKsVgasOsvv6BwWJWiRZW6VrI6WtsoeHxOCo7dJSrbGw3lCkADGkTLorqbEA)
 
 
-# Comparing two functions
+## Comparing two functions
 
 ```typescript
 let x = (a: number) => 0;
