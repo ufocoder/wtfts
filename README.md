@@ -8,6 +8,7 @@ Tricky and non obvious TypeScript Examples
 * [Enum option](#enum-option)
 * [Interface redeclaration](#interface-redeclaration)
 * [Invariant](#invariant)
+* [Comparing two functions](#comparing-two-functions)
 
 ## Enum option
 
@@ -97,3 +98,18 @@ dogs[0].wow()
 ```
 
 [Playground](https://www.typescriptlang.org/play?ts=4.2.3#code/JYOwLgpgTgZghgYwgAgIImAWzgG2Qb2RDkwgC5kBnMKUAc2QF8BYAKFElkRQGE4xkEAB6QQAE0poM2PIVIB7AO4UAFAEpkAXgB8VGvSZsO0eEmQAReQ2GiJUrLgLJFS1Rp17aIBi1ZsE8iDUyHBiYugOeJrIKnDSuJQUETIA2gC67rr4bMi5yAFBAgj8FHwC0YTEpBQA5GXIAMQAjDUANMgKyjGZyDWdNUwA3Dl5cZGUAHQADgCulAAWKsVgasOsvv6BwWJWiRZW6VrI6WtsoeHxOCo7dJSrbGw3lCkADGkTLorqbEA)
+
+
+# Comparing two functions
+
+```
+let x = (a: number) => 0;
+let y = (b: number, s: string) => 0;
+y = x; // OK
+x = y; // Error
+```
+
+[Playground](https://www.typescriptlang.org/play?#code/DYUwLgBAHhC8EAoCGAuCA7ArgWwEYgCcBKOAPggAYBuAWAChRIBPORXNLPQgGggGc0fMAQCW6AOYlY5avRbwoVCAHplEAPIBpejHhMlqiAFECBAPYEgA)
+
+Explanation from [official documentation](https://www.typescriptlang.org/docs/handbook/type-compatibility.html#comparing-two-functions)
+
