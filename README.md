@@ -25,6 +25,10 @@ enum CustomEnum {
 // CustomEnum.optionB !== optionA
 ```
 
+**Explanation**: 
+
+Value for `optionB` use `optionA` from enum score.
+
 Will be compiled to:
 
 ```javascript
@@ -38,7 +42,7 @@ var CustomEnum;
 ;
 ```
 
-**Explanation**: Value for `optionB` use `optionA` from enum score
+
 
 
 [Playground](https://www.typescriptlang.org/play?ts=4.2.3#code/MYewdgzgLgBCAOUCW4CCMC8MDkA3AhgE5L4BGANgKYBq+5ArpatgNwCwAUJ5WPQLYwAwvWgg+AUV4CA3pxjy4iFGHRZsPfrQZNsAGjkKEycACFMi4ys4BfFkA)
@@ -80,7 +84,7 @@ Type '{ weight: number; }' is missing the following properties from type 'Box': 
 
 The following code will be compiled without errors:
 
-```
+```typescript
 interface Animal { name: string }
 interface Cat extends Animal { meow: () => string }
 interface Dog extends Animal { wow: () => string }
@@ -102,7 +106,7 @@ dogs[0].wow()
 
 # Comparing two functions
 
-```
+```typescript
 let x = (a: number) => 0;
 let y = (b: number, s: string) => 0;
 y = x; // OK
