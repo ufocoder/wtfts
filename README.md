@@ -20,12 +20,12 @@ const optionA = 'variableValueA';
 enum CustomEnum {
     optionA = 'enumValueA',
     optionB = optionA
-};
+}
 
 // CustomEnum.optionB !== optionA
 ```
 
-[Playground](https://www.typescriptlang.org/play?ts=4.2.3#code/MYewdgzgLgBCAOUCW4CCMC8MDkA3AhgE5L4BGANgKYBq+5ArpatgNwCwAUJ5WPQLYwAwvWgg+AUV4CA3pxjy4iFGHRZsPfrQZNsAGjkKEycACFMi4ys4BfFkA)
+[Playground](https://www.typescriptlang.org/play?ts=4.2.3&ssl=1&ssc=1&pln=6&pc=2#code/MYewdgzgLgBCAOUCW4CCMC8MDkA3AhgE5L4BGANgKYBq+5ArpatgNwCwAUJ5WPQLYwAwvWgg+AUV4CA3pxjy4iFGHRZsPfrQZNsAGjkKEycACFMi4ys4BfIA)
 
 **Explanation**: 
 
@@ -41,7 +41,6 @@ var CustomEnum;
     CustomEnum["optionA"] = "enumValueA";
     CustomEnum["optionB"] = "enumValueA";
 })(CustomEnum || (CustomEnum = {}));
-;
 ```
 
 ## Interface redeclaration
