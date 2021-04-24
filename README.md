@@ -9,6 +9,7 @@ Tricky and non obvious TypeScript Examples
 * [Interface redeclaration](#interface-redeclaration)
 * [Invariant](#invariant)
 * [Comparing two functions](#comparing-two-functions)
+* [Interfaces with similar structure](#interfaces-with-similar-structure)
 
 ## Enum option
 
@@ -102,13 +103,49 @@ dogs[0].wow()
 ## Comparing two functions
 
 ```typescript
-let x = (a: number) => 0;
-let y = (b: number, s: string) => 0;
+let x = (a: number) => a;
+let y = (b: number, s: string) => s ? b : 0;
+
 y = x; // OK
 x = y; // Error
 ```
 
-[Playground](https://www.typescriptlang.org/play?#code/DYUwLgBAHhC8EAoCGAuCA7ArgWwEYgCcBKOAPggAYBuAWAChRIBPORXNLPQgGggGc0fMAQCW6AOYlY5avRbwoVCAHplEAPIBpejHhMlqiAFECBAPYEgA)
+[Playground](https://www.typescriptlang.org/play?ssl=1&ssc=1&pln=5&pc=16#code/DYUwLgBAHhC8EAoCGAuCA7ArgWwEYgCcBKOAPgiQG4BYAKFEgE85Fc0s9CAaCAZzV5gCAS3QBzErHK8IAfgi4IaAAw1adZvCiUIAel0QA8gGs6MeIx36IAUQIEA9gSA)
 
 Explanation from [official documentation](https://www.typescriptlang.org/docs/handbook/type-compatibility.html#comparing-two-functions)
 
+## Interfaces with similar structure
+
+```
+interface Entity {
+  name: string;
+}
+
+
+interface Enemy {
+  name: string;
+  health: number;
+  attack: number;
+}
+
+interface Player {
+  name: string;
+  health: number;
+  attack: number;
+}
+
+let entity: Entity = { name: 'Mario' }
+let enemy: Enemy = { name: 'Shredder', health: 100, attack: 20 };
+let player: Player = { name: 'John Cena', health: 110, attack: 35 };
+
+enemy = player; // OK ?!
+player = enemy; // OK ?!
+
+entity = enemy; // OK ?!
+enemy = entity; // Error
+```
+
+[Playground](
+https://www.typescriptlang.org/play?ssl=1&ssc=1&pln=27&pc=1#code/JYOwLgpgTgZghgYwgAgKLmGAnsg3gWAChlkQ4BbCALmQGcwpQBzAbiIF8ivDRJZEU6CORwFipCtToNmbcQAsIcADZh5NEAFdyAI2hyScMGEQBrDdr1Q5nQkV7R4SZAAVlcLNDxESZSjXpGEFYfZEUVNQtdfVCjEwRzUksYwlsiZQgwZAgMbBp0MEwcAF48CX9kAHIAWThGAHtK5FsMrJzhLHyQDuRS3HKpSoBleSgIABNx6EqAGjClVXVkAEYABlW5uLMaACZV5rlW5AAHd08oGjcPLz6BmkqAKXr5EGQAYRy4WfmIpeW1zbGbbIADMAFYDtx2iJeiczvpkAB6RHIADyAGlkAB+ACERFO1ygsOhWBYSJRGOxeLshByhWwxO6IjJyLRmNxRBJjPppPJaCgUHqUCIQA)
+
+Explanation: TypeScript is based on structural subtyping
