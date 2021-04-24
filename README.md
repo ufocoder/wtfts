@@ -116,7 +116,7 @@ Explanation from [official documentation](https://www.typescriptlang.org/docs/ha
 
 ## Interfaces with similar structure
 
-```
+```typescript
 interface Entity {
   name: string;
 }
