@@ -6,9 +6,9 @@ Tricky and non obvious TypeScript Examples
 # Table of Contents
 
 * [Enum option](#enum-option)
-* [Interface redeclaration](#interface-redeclaration)
 * [Invariant](#invariant)
 * [Comparing two functions](#comparing-two-functions)
+* [Interface redeclaration](#interface-redeclaration)
 * [Interfaces with similar structure](#interfaces-with-similar-structure)
 
 ## Enum option
@@ -43,38 +43,6 @@ var CustomEnum;
     CustomEnum["optionB"] = "enumValueA";
 })(CustomEnum || (CustomEnum = {}));
 ```
-
-## Interface redeclaration
-
-The following code:
-
-```typescript
-interface Box {
-    size: number;
-    color: string;
-}
-
-// .. many lines of code here
-
-interface Box {
-    weight: number;
-}
-
-const box: Box = {
-    weight: 5
-}
-```
-
-has compile error:
-
-```
-Type '{ weight: number; }' is missing the following properties from type 'Box': size, color
-```
-
-[Playground](https://www.typescriptlang.org/play?ts=4.2.3#code/JYOwLgpgTgZghgYwgAgEIHsAeyDeBYAKGWOQGdgAvCALmRAFcBbAI2gG5CTkF0AbdKLVJgooAOYcCAX0KEA9HOQA6JckZwQAT2S9QEUsnQxu6ACYoAFtAiyCoSLEQoM2fERIB3CMDEWwtBhZ2QhkCQh4QYWRmLFoXZABeXE5Pb19-ZABWENsgA)
-
-**Explanation**: Interfaces not are overridden by new declations. 
-
 
 ## Invariant
 
@@ -113,6 +81,37 @@ x = y; // Error
 [Playground](https://www.typescriptlang.org/play?ssl=1&ssc=1&pln=5&pc=16#code/DYUwLgBAHhC8EAoCGAuCA7ArgWwEYgCcBKOAPgiQG4BYAKFEgE85Fc0s9CAaCAZzV5gCAS3QBzErHK8IAfgi4IaAAw1adZvCiUIAel0QA8gGs6MeIx36IAUQIEA9gSA)
 
 Explanation from [official documentation](https://www.typescriptlang.org/docs/handbook/type-compatibility.html#comparing-two-functions)
+
+## Interface redeclaration
+
+The following code:
+
+```typescript
+interface Box {
+    size: number;
+    color: string;
+}
+
+// .. many lines of code here
+
+interface Box {
+    weight: number;
+}
+
+const box: Box = {
+    weight: 5
+}
+```
+
+has compile error:
+
+```
+Type '{ weight: number; }' is missing the following properties from type 'Box': size, color
+```
+
+[Playground](https://www.typescriptlang.org/play?ts=4.2.3#code/JYOwLgpgTgZghgYwgAgEIHsAeyDeBYAKGWOQGdgAvCALmRAFcBbAI2gG5CTkF0AbdKLVJgooAOYcCAX0KEA9HOQA6JckZwQAT2S9QEUsnQxu6ACYoAFtAiyCoSLEQoM2fERIB3CMDEWwtBhZ2QhkCQh4QYWRmLFoXZABeXE5Pb19-ZABWENsgA)
+
+**Explanation**: Interfaces not are overridden by new declations. 
 
 ## Interfaces with similar structure
 
